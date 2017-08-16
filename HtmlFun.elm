@@ -1,4 +1,4 @@
-module Main exposing (..)
+module HtmlFun exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -14,7 +14,7 @@ box =
         ]
         [ h1
             []
-            [ text "hello div"
+            [ text "some html from Elm!!!"
             ]
         ]
 
