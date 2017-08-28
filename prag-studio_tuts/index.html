@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="htmlFun.js"></script>
+  </head>
+
+  <body>
+    <div>some html not from elm</div>
+    <div id='elm-html-fun'></div>
+    <script>
+      var node = document.getElementById('elm-html-fun');
+      var app = Elm.HtmlFun.embed(node);
+    </script>
+  </body>
+</html>
