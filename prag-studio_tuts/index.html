@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="htmlFun.js"></script>
+    <script src="bingo.js"></script>
   </head>
 
   <body>
-    <div>some html not from elm</div>
-    <div id='elm-html-fun'></div>
+    <div id='bingo'></div>
     <script>
-      var node = document.getElementById('elm-html-fun');
-      var app = Elm.HtmlFun.embed(node);
+      var node = document.getElementById('bingo');
+      var app = Elm.Bingo.embed(node);
     </script>
   </body>
 </html>
