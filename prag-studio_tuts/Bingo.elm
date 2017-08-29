@@ -14,5 +14,13 @@ rightToLeft =
     Html.text <| String.toLower <| "Jeremy's game"
 
 
+gameTitle name num =
+    name ++ " game " ++ (toString num)
+
+
+gameTitleText name num =
+    gameTitle name num |> Html.text
+
+
 main =
-    rightToLeft
+    gameTitleText "josh" 4
