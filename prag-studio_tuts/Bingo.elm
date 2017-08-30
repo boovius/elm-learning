@@ -14,8 +14,12 @@ rightToLeft =
     Html.text <| String.toLower <| "Jeremy's game"
 
 
-gameTitle name num =
-    name ++ " game " ++ (toString num)
+
+-- anonymous function assigned to variable
+
+
+gameTitle =
+    \name num -> name ++ " game " ++ (toString num)
 
 
 gameTitleText name num =
