@@ -1,6 +1,7 @@
 module Bingo exposing (..)
 
-import Html
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 leftToRight =
@@ -23,8 +24,8 @@ gameTitle =
 
 
 gameTitleText name num =
-    gameTitle name num |> Html.text
+    gameTitle name num |> text
 
 
 main =
-    gameTitleText "josh" 4
+    h2 [ id "title", class "classy" ] [ gameTitleText "josh" 4 ]
