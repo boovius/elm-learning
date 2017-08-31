@@ -23,9 +23,15 @@ gameTitle =
     \name num -> name ++ " game " ++ (toString num)
 
 
-gameTitleText name num =
-    gameTitle name num |> text
+viewPlayer name gameNumber =
+    let
+        gameTitleText =
+            gameTitle name gameNumber
+                |> String.pad 40 '*'
+                |> text
+    in
+        h2 [ id "title", class "classy" ] [ gameTitleText ]
 
 
 main =
-    h2 [ id "title", class "classy" ] [ gameTitleText "josh" 4 ]
+    viewPlayer "josh" 4
