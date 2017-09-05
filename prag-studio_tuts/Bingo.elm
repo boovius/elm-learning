@@ -19,25 +19,29 @@ rightToLeft =
 -- anonymous function assigned to variable
 
 
-gameTitle =
-    \name num -> name ++ " game " ++ (toString num)
+playerInfo : String -> Int -> String
+playerInfo name num =
+    name ++ " game " ++ (toString num)
 
 
+viewPlayer : String -> Int -> Html msg
 viewPlayer name gameNumber =
     let
         gameTitleText =
-            gameTitle name gameNumber
+            playerInfo name gameNumber
                 |> String.pad 40 '*'
                 |> text
     in
         h2 [ id "title", class "classy" ] [ gameTitleText ]
 
 
+viewHeader : String -> Html msg
 viewHeader title =
     header []
         [ h1 [] [ text title ] ]
 
 
+viewFooter : Html msg
 viewFooter =
     footer []
         [ a [ href "http://elm-lang.org" ]
@@ -45,6 +49,7 @@ viewFooter =
         ]
 
 
+view : Html msg
 view =
     div [ class "content" ]
         [ viewHeader "BUZZWORD BINGO"
@@ -53,5 +58,6 @@ view =
         ]
 
 
+main : Html msg
 main =
     view
