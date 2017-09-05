@@ -33,5 +33,25 @@ viewPlayer name gameNumber =
         h2 [ id "title", class "classy" ] [ gameTitleText ]
 
 
+viewHeader title =
+    header []
+        [ h1 [] [ text title ] ]
+
+
+viewFooter =
+    footer []
+        [ a [ href "http://elm-lang.org" ]
+            [ text "Powered by Elm" ]
+        ]
+
+
+view =
+    div [ class "content" ]
+        [ viewHeader "BUZZWORD BINGO"
+        , viewPlayer "Josh" 4
+        , viewFooter
+        ]
+
+
 main =
-    viewPlayer "josh" 4
+    view
