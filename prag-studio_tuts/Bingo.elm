@@ -4,19 +4,24 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 
-leftToRight =
-    "Josh's game"
-        |> String.repeat 3
-        |> String.toUpper
-        |> Html.text
+-- Model
 
 
-rightToLeft =
-    Html.text <| String.toLower <| "Jeremy's game"
+initialModel =
+    { name = "Josh"
+    , gameNumber = 4
+    , entries = initialEntries
+    }
+
+
+initialEntries =
+    [ { id = 1, phrase = "Future Proof", points = 100, marked = False }
+    , { id = 2, phrase = "Doing Agile", points = 200, marked = False }
+    ]
 
 
 
--- anonymous function assigned to variable
+-- View
 
 
 playerInfo : String -> Int -> String
@@ -49,15 +54,19 @@ viewFooter =
         ]
 
 
-view : Html msg
-view =
+
+--view : Html msg
+
+
+view model =
     div [ class "content" ]
         [ viewHeader "BUZZWORD BINGO"
         , viewPlayer "Josh" 4
+        , div [ class "debug" ] [ text (toString model) ]
         , viewFooter
         ]
 
 
 main : Html msg
 main =
-    view
+    view initialModel
