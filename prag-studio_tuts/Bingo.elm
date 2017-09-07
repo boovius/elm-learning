@@ -9,7 +9,7 @@ import Html.Attributes exposing (..)
 
 initialModel =
     { name = "Josh"
-    , gameNumber = 4
+    , gameNumber = 1
     , entries = initialEntries
     }
 
@@ -61,7 +61,7 @@ viewFooter =
 view model =
     div [ class "content" ]
         [ viewHeader "BUZZWORD BINGO"
-        , viewPlayer "Josh" 4
+        , viewPlayer model.name model.gameNumber
         , div [ class "debug" ] [ text (toString model) ]
         , viewFooter
         ]
